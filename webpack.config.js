@@ -4,9 +4,8 @@ const path = require("path");
 const config = {
   mode: "production",
   entry: {
-    app: "./public/assets/js/home.js",
-    detail: "./public/assets/js/detail.js",
-    favorites: "./public/assets/js/favorites.js"
+    app: "./public/index.js",
+    db: "./public/db.js"
   },
   output: {
     path: __dirname + "/public/dist",
@@ -16,15 +15,15 @@ const config = {
     new WebpackPwaManifest({
       fingerprints: false,
       inject: false,
-      name: "Images App",
-      short_name: "Images App",
-      description: "An application for images",
+      name: "Budget App",
+      short_name: "Budget",
+      description: "A PWA for budgeting",
       background_color: "#01579b",
       theme_color: "#ffffff",
       start_url: "/",
       icons: [{
-        src: path.resolve("public/assets/images/icons/icon-192x192.png"),
-        sizes: [96, 128, 192, 256, 384, 512],
+        src: path.resolve("public/icons/icon-192x192.png"),
+        sizes: [192, 512],
         destination: path.join("assets", "icons")
       }]
     })
