@@ -43,15 +43,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="index.js"></script>
-  <script>
-    const request = window.indexedDB.open("pending", 1);
-
-    request.onupgradeneeded = event => {
-      const db = event.target.result;
-
-      const pendingStore = db.createObjectStore("pending", {keypath: 'pendID'});
-      pendingStore.createIndex("status", "status");
-    }
-  </script>
+  <script src="db.js"></script>
 </body>
 </html>
